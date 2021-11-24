@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\brancheController;
+use App\Http\Controllers\BusinessUnitsController;
+use App\Http\Controllers\CompanyCustomersController;
 use App\Http\Controllers\CompanyDebtsController;
 use App\Http\Controllers\CompanyIncomesController;
 use App\Http\Controllers\CompanyDebtPaymentsController;
@@ -20,7 +22,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/company-incomes', [CompanyIncomesController::class, 'store']);
     Route::get('/company-income-payments', [CompanyIncomePaymentsController::class, 'index']);
     Route::get('/company-debts', [CompanyDebtsController::class, 'index']);
-    Route::get('/company-debt-payments', [CompanyDebtPaymentsController::class, 'index']);    
+    Route::get('/company-debt-payments', [CompanyDebtPaymentsController::class, 'index']);
+    Route::get('/business-units', [BusinessUnitsController::class, 'index']);
+    Route::get('/company-customers', [CompanyCustomersController::class, 'index']);    
 });
+
+
 
 Route::post('/login', [UserController::class, 'login']);
