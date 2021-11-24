@@ -35,5 +35,5 @@ Route::group(['middleware' => 'auth:api'], function () {
     
     Route::get('/suppliers', [SuppliersController::class, 'index']);
 });
-
+Route::put('/company-debts/{companyDebt}/approved-rejected', [CompanyDebtsController::class, 'approved']);
 Route::post('/login', [UserController::class, 'login']);
