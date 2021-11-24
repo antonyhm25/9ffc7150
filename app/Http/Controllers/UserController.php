@@ -32,7 +32,7 @@ class UserController extends Controller
         }
         
         $user = User::where('username',$request->username)->get()->first();
-        
+    
         if ($user && Hash::check($request->password_laravel, $user->password_laravel)) {
             $token = $user->createToken('Laravel')->accessToken;
             return response()->json([
