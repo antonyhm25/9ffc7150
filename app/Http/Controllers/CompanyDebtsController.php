@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CompanyDebt;
 use Illuminate\Http\Request;
 
-class DebtsPayController extends Controller
+class CompanyDebtsController extends Controller
 {
     public function index()
     {
