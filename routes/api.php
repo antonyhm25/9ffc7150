@@ -10,6 +10,7 @@ use App\Http\Controllers\CompanyDebtsController;
 use App\Http\Controllers\CompanyIncomesController;
 use App\Http\Controllers\CompanyDebtPaymentsController;
 use App\Http\Controllers\CompanyIncomePaymentsController;
+use App\Http\Controllers\SuppliersController;
 
 Route::group(['middleware' => 'auth:api'], function () {
     
@@ -20,13 +21,19 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::get('/company-incomes', [CompanyIncomesController::class, 'index']);
     Route::post('/company-incomes', [CompanyIncomesController::class, 'store']);
+    
     Route::get('/company-income-payments', [CompanyIncomePaymentsController::class, 'index']);
+    
     Route::get('/company-debts', [CompanyDebtsController::class, 'index']);
+    Route::post('/company-debts', [CompanyDebtsController::class, 'store']);
+    
     Route::get('/company-debt-payments', [CompanyDebtPaymentsController::class, 'index']);
+    
     Route::get('/business-units', [BusinessUnitsController::class, 'index']);
-    Route::get('/company-customers', [CompanyCustomersController::class, 'index']);    
+    
+    Route::get('/company-customers', [CompanyCustomersController::class, 'index']);
+    
+    Route::get('/suppliers', [SuppliersController::class, 'index']);
 });
-
-
 
 Route::post('/login', [UserController::class, 'login']);
