@@ -9,6 +9,8 @@ class CompanyDebtPaymentsController extends Controller
 {
     public function index()
     {
-        return CompanyDebtPayment::with('companyDebt')->get();
+        $result = CompanyDebtPayment::with('companyDebt')->get();
+
+        return  response()->json($result);
     }
 }

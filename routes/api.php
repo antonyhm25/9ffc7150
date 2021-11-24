@@ -17,11 +17,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/sales',[SaleController::class,'venta']);
 
     Route::get('/company-incomes', [CompanyIncomesController::class, 'index']);
+    Route::post('/company-incomes', [CompanyIncomesController::class, 'store']);
     Route::get('/company-income-payments', [CompanyIncomePaymentsController::class, 'index']);
     Route::get('/company-debts', [CompanyDebtsController::class, 'index']);
-    Route::get('/company-debt-payments', [CompanyDebtPaymentsController::class, 'index']);
+    Route::get('/company-debt-payments', [CompanyDebtPaymentsController::class, 'index']);    
 });
-
-
 
 Route::post('/login', [UserController::class, 'login']);
