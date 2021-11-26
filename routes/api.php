@@ -21,7 +21,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     
     Route::get('/branches', [BranchesController::class, 'index']);
     
-    Route::get('/sales', [SalesController::class, 'index']);
+    Route::get('/sales-lines', [SalesController::class, 'salesLine']);
+    Route::get('/sales-specials', [SalesController::class, 'salesSpecial']);
 
     Route::get('/company-incomes', [CompanyIncomesController::class, 'index']);
     Route::post('/company-incomes', [CompanyIncomesController::class, 'store']);
