@@ -11,6 +11,7 @@ use App\Http\Controllers\CompanyIncomesController;
 use App\Http\Controllers\CompanyCustomersController;
 use App\Http\Controllers\CompanyDebtPaymentsController;
 use App\Http\Controllers\CompanyIncomePaymentsController;
+use App\Http\Controllers\InventoryController;
 
 Route::group(['middleware' => 'auth:api'], function () {
     
@@ -38,6 +39,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/company-customers', [CompanyCustomersController::class, 'index']);
     
     Route::get('/suppliers', [SuppliersController::class, 'index']);
+
+    Route::get('/inventories', [InventoryController::class, 'index']);
 });
 
 Route::post('/login', [UserController::class, 'login']);
