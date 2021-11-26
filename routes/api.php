@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SaleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\BranchesController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\CompanyDebtsController;
 use App\Http\Controllers\BusinessUnitsController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\CompanyIncomesController;
 use App\Http\Controllers\CompanyCustomersController;
 use App\Http\Controllers\CompanyDebtPaymentsController;
 use App\Http\Controllers\CompanyIncomePaymentsController;
-use App\Http\Controllers\InventoryController;
 
 Route::group(['middleware' => 'auth:api'], function () {
     
@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     
     Route::get('/branches', [BranchesController::class, 'index']);
     
-    Route::post('/sales',[SaleController::class,'venta']);
+    Route::get('/sales', [SalesController::class, 'index']);
 
     Route::get('/company-incomes', [CompanyIncomesController::class, 'index']);
     Route::post('/company-incomes', [CompanyIncomesController::class, 'store']);
