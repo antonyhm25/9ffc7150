@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\BranchesController;
+use App\Http\Controllers\BranchSafeBoxesController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\CompanyDebtsController;
@@ -42,6 +43,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/suppliers', [SuppliersController::class, 'index']);
 
     Route::get('/inventories', [InventoryController::class, 'index']);
+
+    Route::get('branch-safe-boxes', [BranchSafeBoxesController::class, 'index']);
+    Route::post('branch-safe-boxes/{branchSafeBox}/cash-withdrawal', [BranchSafeBoxesController::class, 'cashWithdrawal']);
 });
 
 Route::post('/login', [UserController::class, 'login']);
