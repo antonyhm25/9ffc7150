@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\CandlesController;
 use App\Http\Controllers\BranchesController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\InventoryController;
@@ -53,6 +54,8 @@ Route::middleware(['cors'])->group(function () {
         Route::get('payments', [PaymentsController::class, 'index']);
 
         Route::get('branch-royalties', [BranchRoyaltiesController::class, 'index']);
+
+        Route::get('candles', [CandlesController::class, 'index']);
     });
 
     Route::post('/login', [UserController::class, 'login']);
