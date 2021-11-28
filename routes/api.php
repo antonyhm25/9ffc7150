@@ -4,16 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\BranchesController;
-use App\Http\Controllers\BranchSafeBoxesController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\CompanyDebtsController;
 use App\Http\Controllers\BusinessUnitsController;
 use App\Http\Controllers\CompanyIncomesController;
+use App\Http\Controllers\BranchRoyaltiesController;
+use App\Http\Controllers\BranchSafeBoxesController;
 use App\Http\Controllers\CompanyCustomersController;
 use App\Http\Controllers\CompanyDebtPaymentsController;
 use App\Http\Controllers\CompanyIncomePaymentsController;
-use App\Http\Controllers\PaymentsController;
 
 Route::middleware(['cors'])->group(function () {
     Route::group(['middleware' => 'auth:api'], function () {
@@ -50,6 +51,8 @@ Route::middleware(['cors'])->group(function () {
         Route::post('branch-safe-boxes/{branchSafeBox}/cash-withdrawal', [BranchSafeBoxesController::class, 'cashWithdrawal']);
 
         Route::get('payments', [PaymentsController::class, 'index']);
+
+        Route::get('branch-royalties', [BranchRoyaltiesController::class, 'index']);
     });
 
     Route::post('/login', [UserController::class, 'login']);
