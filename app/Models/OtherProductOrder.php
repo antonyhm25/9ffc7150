@@ -9,6 +9,8 @@ class OtherProductOrder extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function details()
     {
         return $this->hasMany(OtherProductOrderDetail::class);
