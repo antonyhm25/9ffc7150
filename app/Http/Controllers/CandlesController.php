@@ -33,7 +33,7 @@ class CandlesController extends Controller
 
         try {
 
-            if ($request->total < $otherProductOrder->total) {
+            if ($request->total > $otherProductOrder->total) {
                 return response('invalid data', 422);
             }
 
