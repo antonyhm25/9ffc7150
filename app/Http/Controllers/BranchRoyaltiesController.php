@@ -42,7 +42,7 @@ class BranchRoyaltiesController extends Controller
             'payment_method' => 'required',
             'total' => 'required|numeric',
             'user_id' => 'required|integer',
-            'nip' => 'required|integer|exists:branch_users,nip',
+            'nip' => 'required|exists:branch_users,nip',
         ]);
 
         $branchUser = BranchUser::where('nip', $request->nip)
@@ -75,7 +75,7 @@ class BranchRoyaltiesController extends Controller
             'payment_method' => 'required',
             'total' => 'required|numeric',
             'user_id' => 'required|integer',
-            'nip' => 'required|integer|exists:branch_users,nip',
+            'nip' => 'required|exists:branch_users,nip',
         ]);
 
         $branchUser = BranchUser::where('nip', $request->nip)

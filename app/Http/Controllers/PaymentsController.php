@@ -32,7 +32,7 @@ class PaymentsController extends Controller
             'payment_method' => 'required',
             'total' => 'required|numeric',
             'user_id' => 'required|integer',
-            'nip' => 'required|integer|exists:branch_users,nip',
+            'nip' => 'required|exists:branch_users,nip',
         ]);
 
         try {
