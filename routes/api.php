@@ -59,6 +59,7 @@ Route::middleware(['cors'])->group(function () {
         Route::post('branch-annual-royalties', [BranchRoyaltiesController::class, 'storeRoyaltyAnnualPayments']);
 
         Route::get('candles', [CandlesController::class, 'index']);
+        Route::post('candle-payments', [CandlesController::class, 'store']);
     });
 
     Route::post('/login', [UserController::class, 'login']);
