@@ -9,6 +9,10 @@ class Payment extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    public $timestamps = false;
+
     protected $casts = [
         'id' => 'integer',
         'branch_id' => 'integer',

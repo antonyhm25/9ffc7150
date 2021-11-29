@@ -52,6 +52,7 @@ Route::middleware(['cors'])->group(function () {
         Route::post('branch-safe-boxes/{branchSafeBox}/cash-withdrawal', [BranchSafeBoxesController::class, 'cashWithdrawal']);
 
         Route::get('payments', [PaymentsController::class, 'index']);
+        Route::post('payments', [PaymentsController::class, 'store']);
 
         Route::get('branch-royalties', [BranchRoyaltiesController::class, 'index']);
 
